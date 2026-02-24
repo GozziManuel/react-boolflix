@@ -1,4 +1,7 @@
+import { UseMovie } from "../context/MainContext";
+
 export default function Navbar() {
+  const { handleValue, movie } = UseMovie();
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -9,10 +12,7 @@ export default function Navbar() {
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,6 +24,9 @@ export default function Navbar() {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                //
+                onChange={handleValue}
+                value={movie}
               />
             </li>
           </ul>
