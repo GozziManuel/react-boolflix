@@ -1,17 +1,14 @@
-import axios from "axios";
-import { useState } from "react";
 import { UseMovie } from "../context/MainContext";
 
 export default function CardContainer() {
-  const { movie } = UseMovie();
-  const [getMovie, setGetMovie] = useState([]);
-  console.log(getMovie);
+  const { movies } = UseMovie();
+  console.log(movies);
 
   return (
     <>
       <div className="container-sm">
         <div className="row g-3 my-5">
-          {getMovie.map((element, index) => {
+          {movies.map((element, index) => {
             return (
               <div className="col-3" key={index}>
                 <div className="cardcontainer">
