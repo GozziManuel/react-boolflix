@@ -1,3 +1,10 @@
+import DefaultLayout from "./layouts/DefaultLayout";
+
 export default function App() {
-  return <h1>Demo Vite & React</h1>;
+  return (
+    <>
+      <DefaultLayout />
+      <h1>Demo Vite & React</h1>
+    </>
+  );
 }
