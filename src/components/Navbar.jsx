@@ -1,12 +1,26 @@
 import { UseMovie } from "../context/MainContext";
+import { useState } from "react";
 
 export default function Navbar() {
-  const { handleValue, movie } = UseMovie();
+  const { searchMovies } = UseMovie();
+  const [movie, setmovie] = useState("");
+  const handleValue = (e) => {
+    setmovie(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchMovies(movie);
+    console.log(movie);
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav
+      className="navbar navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark"
+    >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
+        <a className="navbar-brand titlenavbar" href="#">
+          BoolFix
         </a>
         <button
           class="navbar-toggler"
@@ -22,15 +36,17 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                //
-                onChange={handleValue}
-                value={movie}
-              />
+              <form onSubmit={handleSubmit}>
+                <input
+                  className="form-control me-2"
+                  placeholder="Search"
+                  aria-label="Search"
+                  //
+                  onChange={handleValue}
+                  value={movie}
+                />
+                <button class="btn btn-outline-success">Search</button>
+              </form>
             </li>
           </ul>
         </div>

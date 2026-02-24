@@ -1,0 +1,17 @@
+img {
+  object-fit: contain;
+  width: 100%;
+}
+img:hover {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.cardcontainer {
+  background-color: rgba(0, 0, 0, 0.844);
+  color: white;
+  border-radius: 10px;
+}
+.titlenavbar {
+  color: red;
+  font-weight: bold;
+}
