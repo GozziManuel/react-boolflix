@@ -21,8 +21,22 @@ export default function CardContainer() {
                     }
                     alt="Img not founded"
                   />
-                  <div className="info">
-                    <p>Prova</p>
+                  <div className="info px-3">
+                    <p className="mb-1">
+                      <strong>Title: </strong>
+                      {element.title}
+                    </p>
+                    <p className="mb-1">
+                      <strong>Original Title: </strong>
+                      {element.original_title}
+                    </p>
+                    <p className="mb-1">
+                      <strong>Rating: </strong>
+                    </p>
+                    <p className="mb-1">
+                      <strong>Overview: </strong>
+                      {element.overview}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -43,6 +57,27 @@ export default function CardContainer() {
                     }
                     alt="Img not founded"
                   />
+                  <div className="info px-1">
+                    <p className="mb-1">
+                      <strong>Title: </strong>
+                      {element.name}
+                    </p>
+                    <p className="mb-1">
+                      <strong>Original Title: </strong>
+                      {element.original_name}
+                    </p>
+                    <p className="mb-1">
+                      <strong>Original Title: </strong>
+                      {element.original_name}
+                    </p>
+                    <p className="mb-1">
+                      <strong>Rating: </strong>
+                    </p>
+                    <p className="mb-1">
+                      <strong>Overview: </strong>
+                      {element.overview}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
