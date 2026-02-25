@@ -11,7 +11,7 @@ export default function CardContainer() {
         <div className="row g-3 my-5">
           {movies.map((element, index) => {
             return (
-              <div className="col-3" key={index}>
+              <div className="col-6 col-lg-3" key={index}>
                 <div className="cardcontainer">
                   <img
                     src={
@@ -31,11 +31,23 @@ export default function CardContainer() {
                       {element.original_title}
                     </p>
                     <p className="mb-1">
-                      <strong>Rating: </strong>
+                      <strong>
+                        Rating: {Math.round(element.vote_average / 2)}
+                        <br />
+                        {[
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                        ].splice(0, Math.round(element.vote_average / 2))}
+                      </strong>
                     </p>
                     <p className="mb-1">
                       <strong>Overview: </strong>
-                      {element.overview}
+                      {element.overview === ""
+                        ? "Overview not present"
+                        : element.overview}
                     </p>
                   </div>
                 </div>
@@ -47,7 +59,7 @@ export default function CardContainer() {
         <div className="row g-3 my-5">
           {series.map((element, index) => {
             return (
-              <div className="col-3" key={index}>
+              <div className="col-6 col-lg-3" key={index}>
                 <div className="cardcontainer">
                   <img
                     src={
@@ -71,11 +83,23 @@ export default function CardContainer() {
                       {element.original_name}
                     </p>
                     <p className="mb-1">
-                      <strong>Rating: </strong>
+                      <strong>
+                        Rating: {Math.round(element.vote_average / 2)}
+                        <br />
+                        {[
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                          <i class="bi bi-star-fill"></i>,
+                        ].splice(0, Math.round(element.vote_average / 2))}
+                      </strong>
                     </p>
                     <p className="mb-1">
                       <strong>Overview: </strong>
-                      {element.overview}
+                      {element.overview === ""
+                        ? "Overview not present"
+                        : element.overview}
                     </p>
                   </div>
                 </div>

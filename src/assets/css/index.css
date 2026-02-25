@@ -11,7 +11,8 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.844);
   cursor: pointer;
-  position: relative;
+  justify-content: center;
+  display: flex;
 }
 .titlenavbar {
   color: red;
@@ -19,7 +20,7 @@ img {
 }
 .info {
   display: none;
-  width: 100%;
+  width: 88%;
   margin: 0 auto;
   padding-top: 10px;
   font-size: 13px;
