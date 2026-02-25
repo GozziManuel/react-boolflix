@@ -2,7 +2,7 @@ import { UseMovie } from "../context/MainContext";
 import { useState } from "react";
 
 export default function Navbar() {
-  const { searchMovies } = UseMovie();
+  const { searchMovies, searchSeries } = UseMovie();
   const [movie, setmovie] = useState("");
   const handleValue = (e) => {
     setmovie(e.target.value);
@@ -10,7 +10,7 @@ export default function Navbar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     searchMovies(movie);
-    console.log(movie);
+    searchSeries(movie);
   };
 
   return (
@@ -23,7 +23,7 @@ export default function Navbar() {
           BoolFix
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -31,7 +31,7 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -45,7 +45,7 @@ export default function Navbar() {
                   onChange={handleValue}
                   value={movie}
                 />
-                <button class="btn btn-outline-success">Search</button>
+                <button className="btn btn-outline-success">Search</button>
               </form>
             </li>
           </ul>

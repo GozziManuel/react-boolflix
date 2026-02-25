@@ -15,10 +15,22 @@ function MovieProvider({ children }) {
         setMovies(res.data.results);
       });
   }
+  const [series, setSeries] = useState([]);
+  function searchSeries(search) {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/tv?api_key=08221786cbbff2ff487de2a03b273534&query=${search}`,
+      )
+      .then((res) => {
+        setSeries(res.data.results);
+      });
+  }
   // ExportList
   const ContextValue = {
     searchMovies,
     movies,
+    searchSeries,
+    series,
   };
 
   return (
