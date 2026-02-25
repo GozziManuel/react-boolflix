@@ -21,6 +21,9 @@ export default function CardContainer() {
                     }
                     alt="Img not founded"
                   />
+                  <div className="info">
+                    <p>Prova</p>
+                  </div>
                 </div>
               </div>
             );
